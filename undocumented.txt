@@ -1,0 +1,27 @@
+CoreDataStack.swift
+	public final class CoreDataStack: Printable
+	public let model: CoreDataModel
+	public let managedObjectContext: NSManagedObjectContext
+	public let persistentStoreCoordinator: NSPersistentStoreCoordinator
+	public init(model: CoreDataModel,
+        storeType: String = NSSQLiteStoreType,
+        options: [NSObject : AnyObject]? = [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption : true],
+        concurrencyType: NSManagedObjectContextConcurrencyType = .MainQueueConcurrencyType)
+	public func childManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType = .MainQueueConcurrencyType,
+        mergePolicyType: NSMergePolicyType = .MergeByPropertyObjectTrumpMergePolicyType) -> ChildManagedObjectContext
+	public var description: String
+CoreDataModel.swift
+	public struct CoreDataModel: Printable
+	public let name: String
+	public let bundle: NSBundle
+	public var storeURL: NSURL
+	public var modelURL: NSURL
+	public var databaseFileName: String
+	public var managedObjectModel: NSManagedObjectModel
+	public var modelStoreNeedsMigration: Bool
+	public func removeExistingModelStore() -> Bool
+	public init(name: String, bundle: NSBundle = NSBundle.mainBundle())
+	public var description: String
+CoreDataExtensions.swift
+	public func saveContextAndWait(context: NSManagedObjectContext) -> ContextSaveResult
+	public func saveContext(context: NSManagedObjectContext, completion: (ContextSaveResult) -> Void)
