@@ -9,7 +9,6 @@ CoreDataStack.swift
         concurrencyType: NSManagedObjectContextConcurrencyType = .MainQueueConcurrencyType)
 	public func childManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType = .MainQueueConcurrencyType,
         mergePolicyType: NSMergePolicyType = .MergeByPropertyObjectTrumpMergePolicyType) -> ChildManagedObjectContext
-	public var description: String
 CoreDataModel.swift
 	public struct CoreDataModel: Printable
 	public let name: String
@@ -21,4 +20,3 @@ CoreDataModel.swift
 	public var modelStoreNeedsMigration: Bool
 	public func removeExistingModelStore() -> Bool
 	public init(name: String, bundle: NSBundle = NSBundle.mainBundle())
-	public var description: String
