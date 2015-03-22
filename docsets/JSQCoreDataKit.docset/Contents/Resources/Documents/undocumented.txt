@@ -10,13 +10,4 @@ CoreDataStack.swift
 	public func childManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType = .MainQueueConcurrencyType,
         mergePolicyType: NSMergePolicyType = .MergeByPropertyObjectTrumpMergePolicyType) -> ChildManagedObjectContext
 CoreDataModel.swift
-	public struct CoreDataModel: Printable
-	public let name: String
-	public let bundle: NSBundle
-	public var storeURL: NSURL
-	public var modelURL: NSURL
-	public var databaseFileName: String
-	public var managedObjectModel: NSManagedObjectModel
-	public var modelStoreNeedsMigration: Bool
-	public func removeExistingModelStore() -> Bool
 	public init(name: String, bundle: NSBundle = NSBundle.mainBundle())
