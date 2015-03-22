@@ -22,6 +22,3 @@ CoreDataModel.swift
 	public func removeExistingModelStore() -> Bool
 	public init(name: String, bundle: NSBundle = NSBundle.mainBundle())
 	public var description: String
-CoreDataExtensions.swift
-	public func saveContextAndWait(context: NSManagedObjectContext) -> ContextSaveResult
-	public func saveContext(context: NSManagedObjectContext, completion: (ContextSaveResult) -> Void)
