@@ -1,13 +1,4 @@
 CoreDataStack.swift
-	public final class CoreDataStack: Printable
-	public let model: CoreDataModel
-	public let managedObjectContext: NSManagedObjectContext
-	public let persistentStoreCoordinator: NSPersistentStoreCoordinator
 	public init(model: CoreDataModel,
-        storeType: String = NSSQLiteStoreType,
-        options: [NSObject : AnyObject]? = [NSMigratePersistentStoresAutomaticallyOption : true, NSInferMappingModelAutomaticallyOption : true],
-        concurrencyType: NSManagedObjectContextConcurrencyType = .MainQueueConcurrencyType)
-	public func childManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType = .MainQueueConcurrencyType,
-        mergePolicyType: NSMergePolicyType = .MergeByPropertyObjectTrumpMergePolicyType) -> ChildManagedObjectContext
 CoreDataModel.swift
 	public init(name: String, bundle: NSBundle = NSBundle.mainBundle())
