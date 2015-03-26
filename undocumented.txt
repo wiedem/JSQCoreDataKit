@@ -1,4 +1,0 @@
-CoreDataStack.swift
-	public init(model: CoreDataModel,
-CoreDataModel.swift
-	public init(name: String, bundle: NSBundle = NSBundle.mainBundle())
