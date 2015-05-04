@@ -1,0 +1,4 @@
+[submodule "JSQCoreDataKit"]
+	path = JSQCoreDataKit
+	url = https://github.com/jessesquires/JSQCoreDataKit.git
+	branch = develop
