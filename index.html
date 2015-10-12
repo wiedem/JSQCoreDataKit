@@ -224,11 +224,8 @@
 <span class="p">}</span>
 </code></pre>
 <a href='#using_child_contexts' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='using_child_contexts'>Using child contexts</h4>
-<pre class="highlight swift"><code><span class="c1">// Create a child context from the main queue context</span>
-<span class="k">let</span> <span class="nv">childContext</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="nf">childContextFromMain</span><span class="p">()</span>
-
-<span class="c1">// Create a child context from the background queue context</span>
-<span class="k">let</span> <span class="nv">childContext</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="nf">childContextFromBackground</span><span class="p">()</span>
+<pre class="highlight swift"><code><span class="c1">// Create a background queue child context from the main queue context</span>
+<span class="k">let</span> <span class="nv">childContext</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="nf">childContext</span><span class="p">()</span>
 </code></pre>
 <a href='#fetching' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='fetching'>Fetching</h4>
 <pre class="highlight swift"><code><span class="c1">// Create a FetchRequest&lt;T&gt;, where T is a phantom type</span>
@@ -255,7 +252,7 @@
 </code></pre>
 <a href='#example_app' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='example_app'>Example app</h2>
 
-<p>There&rsquo;s an example app in the <code>ExampleApp/</code> directory. Open the <code>ExampleApp.xcodeproj</code> to run it. The project exercises most basic functionality of the framework.</p>
+<p>There&rsquo;s an example app in the <code>ExampleApp/</code> directory. Open the <code>ExampleApp.xcodeproj</code> to run it. The project exercises all basic functionality of the framework.</p>
 <a href='#unit_tests' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='unit_tests'>Unit tests</h2>
 
 <p>There&rsquo;s a suite of unit tests for <code>JSQCoreDataKit.framework</code>. To run them, open <code>JSQCoreDataKit.xcworkspace</code>, select the <code>JSQCoreDataKit</code> scheme, then &#x2318;-u.</p>
