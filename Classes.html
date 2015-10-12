@@ -126,10 +126,13 @@
                         <p>An instance of <code>CoreDataStack</code> encapsulates the entire Core Data stack.
 It manages the managed object model, the persistent store coordinator, and managed object contexts.</p>
 
-<p>It is composed of a main context and a background context, both of which are connected to the same persistent store coordinator.
-These two contexts operate on the main queue and a private background queue, respectively.</p>
+<p>It is composed of a main context and a background context
+These two contexts operate on the main queue and a private background queue, respectively.
+The background context is the root level context, which is connected to the persistent store coordinator.
+The main context is a child of the background context.</p>
 
-<p>Data between the two contexts is kept in sync.</p>
+<p>Data between these two primary contexts and child contexts is kept in sync.
+Changes to a context are propagated to its parent context and eventually the persistent store when saving.</p>
 
 <p><strong>You cannot create a <code>CoreDataStack</code> instance directly. Instead, use a <code>CoreDataStackFactory</code> for initialization.</strong></p>
 

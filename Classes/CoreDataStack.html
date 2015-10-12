@@ -114,10 +114,13 @@
             <p>An instance of <code>CoreDataStack</code> encapsulates the entire Core Data stack.
 It manages the managed object model, the persistent store coordinator, and managed object contexts.</p>
 
-<p>It is composed of a main context and a background context, both of which are connected to the same persistent store coordinator.
-These two contexts operate on the main queue and a private background queue, respectively.</p>
+<p>It is composed of a main context and a background context
+These two contexts operate on the main queue and a private background queue, respectively.
+The background context is the root level context, which is connected to the persistent store coordinator.
+The main context is a child of the background context.</p>
 
-<p>Data between the two contexts is kept in sync.</p>
+<p>Data between these two primary contexts and child contexts is kept in sync.
+Changes to a context are propagated to its parent context and eventually the persistent store when saving.</p>
 
 <p><strong>You cannot create a <code>CoreDataStack</code> instance directly. Instead, use a <code>CoreDataStackFactory</code> for initialization.</strong></p>
 
@@ -172,7 +175,8 @@ These two contexts operate on the main queue and a private background queue, res
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The main managed object context for the stack, which operates on the main queue.</p>
+                        <p>The main managed object context for the stack, which operates on the main queue.
+This context is a child context of <code>backgroundContext</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -199,7 +203,8 @@ These two contexts operate on the main queue and a private background queue, res
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The background managed object context for the stack, which operates on a background queue.</p>
+                        <p>The background managed object context for the stack, which operates on a background queue.
+This context is the root level context that is connected to the <code>storeCoordinator</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -226,8 +231,7 @@ These two contexts operate on the main queue and a private background queue, res
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The persistent store coordinator for the stack.
-Both the <code>mainContext</code> and <code>backgroundContext</code> are connected to this coordinator.</p>
+                        <p>The persistent store coordinator for the stack. The <code>backgroundContext</code> is connected to this coordinator.</p>
 
                       </div>
                       <div class="declaration">
@@ -255,9 +259,9 @@ Both the <code>mainContext</code> and <code>backgroundContext</code> are connect
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC14JSQCoreDataKit13CoreDataStack20childContextFromMainFS0_FT15concurrencyTypeOSC37NSManagedObjectContextConcurrencyType15mergePolicyTypeOSC17NSMergePolicyType_CSo22NSManagedObjectContext"></a>
-                    <a name="//apple_ref/swift/Method/childContextFromMain(concurrencyType:mergePolicyType:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC14JSQCoreDataKit13CoreDataStack20childContextFromMainFS0_FT15concurrencyTypeOSC37NSManagedObjectContextConcurrencyType15mergePolicyTypeOSC17NSMergePolicyType_CSo22NSManagedObjectContext">childContextFromMain(concurrencyType:mergePolicyType:)</a>
+                    <a name="/s:FC14JSQCoreDataKit13CoreDataStack12childContextFS0_FT15concurrencyTypeOSC37NSManagedObjectContextConcurrencyType15mergePolicyTypeOSC17NSMergePolicyType_CSo22NSManagedObjectContext"></a>
+                    <a name="//apple_ref/swift/Method/childContext(concurrencyType:mergePolicyType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14JSQCoreDataKit13CoreDataStack12childContextFS0_FT15concurrencyTypeOSC37NSManagedObjectContextConcurrencyType15mergePolicyTypeOSC17NSMergePolicyType_CSo22NSManagedObjectContext">childContext(concurrencyType:mergePolicyType:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -265,14 +269,16 @@ Both the <code>mainContext</code> and <code>backgroundContext</code> are connect
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Creates a new child context whose parent is <code>mainContext</code> and has the specified <code>concurrencyType</code> and <code>mergePolicyType</code>.</p>
+                        <p>Creates a new child context whose parent is <code>mainContext</code> and has the specified <code>concurrencyType</code> and <code>mergePolicyType</code>.
+Saving the returned context will propagate changes through <code>mainContext</code>, <code>backgroundContext</code>, 
+and finally the persistent store.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">childContextFromMain</span><span class="p">(</span>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">childContext</span><span class="p">(</span>
         <span class="n">concurrencyType</span> <span class="nv">concurrencyType</span><span class="p">:</span> <span class="kt">NSManagedObjectContextConcurrencyType</span> <span class="o">=</span> <span class="o">.</span><span class="kt">PrivateQueueConcurrencyType</span><span class="p">,</span>
         <span class="nv">mergePolicyType</span><span class="p">:</span> <span class="kt">NSMergePolicyType</span> <span class="o">=</span> <span class="o">.</span><span class="kt">MergeByPropertyObjectTrumpMergePolicyType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ChildContext</span></code></pre>
 
@@ -314,73 +320,6 @@ Both the <code>mainContext</code> and <code>backgroundContext</code> are connect
                       <div>
                         <h4>Return Value</h4>
                         <p>A new child managed object context whose parent is <code>mainContext</code>.</p>
-
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC14JSQCoreDataKit13CoreDataStack26childContextFromBackgroundFS0_FT15concurrencyTypeOSC37NSManagedObjectContextConcurrencyType15mergePolicyTypeOSC17NSMergePolicyType_CSo22NSManagedObjectContext"></a>
-                    <a name="//apple_ref/swift/Method/childContextFromBackground(concurrencyType:mergePolicyType:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC14JSQCoreDataKit13CoreDataStack26childContextFromBackgroundFS0_FT15concurrencyTypeOSC37NSManagedObjectContextConcurrencyType15mergePolicyTypeOSC17NSMergePolicyType_CSo22NSManagedObjectContext">childContextFromBackground(concurrencyType:mergePolicyType:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Creates a new child context whose parent is <code>backgroundContext</code> and has the specified <code>concurrencyType</code> and <code>mergePolicyType</code>.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="Swift">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">childContextFromBackground</span><span class="p">(</span>
-        <span class="n">concurrencyType</span> <span class="nv">concurrencyType</span><span class="p">:</span> <span class="kt">NSManagedObjectContextConcurrencyType</span> <span class="o">=</span> <span class="o">.</span><span class="kt">PrivateQueueConcurrencyType</span><span class="p">,</span>
-        <span class="nv">mergePolicyType</span><span class="p">:</span> <span class="kt">NSMergePolicyType</span> <span class="o">=</span> <span class="o">.</span><span class="kt">MergeByPropertyObjectTrumpMergePolicyType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ChildContext</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>concurrencyType</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The concurrency pattern to use. The default is <code>.PrivateQueueConcurrencyType</code>.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>mergePolicyType</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The merge policy to use. The default is <code>.MergeByPropertyObjectTrumpMergePolicyType</code>.</p>
-
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A new child managed object context whose parent is <code>backgroundContext</code>.</p>
 
                       </div>
                     </section>
