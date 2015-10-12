@@ -38,22 +38,41 @@
             </ul>
           </li>
           <li class="nav-group-name">
+          <a href="Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v14JSQCoreDataKit19DefaultStoreOptionsGVSs10DictionaryCSo8NSObjectPSs9AnyObject__">DefaultStoreOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+          <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/CoreDataSaveResult.html">CoreDataSaveResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CoreDataStackResult.html">CoreDataStackResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/StoreType.html">StoreType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
           <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit13deleteObjectsU__FTGSaQ__9inContextCSo22NSManagedObjectContext_T_">deleteObjects(_:inContext:)</a>
+                <a href="Functions.html#/s:F14JSQCoreDataKit13deleteObjectsuRdq_CSo15NSManagedObject_FTGSaq__9inContextCSo22NSManagedObjectContext_T_">deleteObjects(_:inContext:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F14JSQCoreDataKit6entityFT4nameSS7contextCSo22NSManagedObjectContext_CSo19NSEntityDescription">entity(name:context:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit5fetchU__FT7requestGCS_12FetchRequestQ__9inContextCSo22NSManagedObjectContext_GVS_11FetchResultQ__">fetch(request:inContext:)</a>
+                <a href="Functions.html#/s:F14JSQCoreDataKit5fetchuRdq_CSo15NSManagedObject_FzT7requestGCS_12FetchRequestq__9inContextCSo22NSManagedObjectContext_GSaq__">fetch(request:inContext:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContextFT7successSb5errorGSqCSo7NSError__T__T_">saveContext(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit18saveContextAndWaitFCSo22NSManagedObjectContextT7successSb5errorGSqCSo7NSError__">saveContextAndWait(_:)</a>
+                <a href="Functions.html#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContext4waitSb10completionGSqFOS_18CoreDataSaveResultT___T_">saveContext(_:wait:completion:)</a>
               </li>
             </ul>
           </li>
@@ -64,7 +83,7 @@
                 <a href="Structs/CoreDataModel.html">CoreDataModel</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/FetchResult.html">FetchResult</a>
+                <a href="Structs/CoreDataStackFactory.html">CoreDataStackFactory</a>
               </li>
             </ul>
           </li>
@@ -72,10 +91,10 @@
           <a href="Typealiases.html">Typealiases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Typealiases.html#/s:14JSQCoreDataKit25ChildManagedObjectContext">ChildManagedObjectContext</a>
+                <a href="Typealiases.html#/s:14JSQCoreDataKit12ChildContext">ChildContext</a>
               </li>
               <li class="nav-group-task">
-                <a href="Typealiases.html#/s:14JSQCoreDataKit17ContextSaveResult">ContextSaveResult</a>
+                <a href="Typealiases.html#/s:14JSQCoreDataKit22PersistentStoreOptions">PersistentStoreOptions</a>
               </li>
             </ul>
           </li>
@@ -94,9 +113,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:F14JSQCoreDataKit18saveContextAndWaitFCSo22NSManagedObjectContextT7successSb5errorGSqCSo7NSError__"></a>
-                    <a name="//apple_ref/swift/Function/saveContextAndWait(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:F14JSQCoreDataKit18saveContextAndWaitFCSo22NSManagedObjectContextT7successSb5errorGSqCSo7NSError__">saveContextAndWait(_:)</a>
+                    <a name="/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContext4waitSb10completionGSqFOS_18CoreDataSaveResultT___T_"></a>
+                    <a name="//apple_ref/swift/Function/saveContext(_:wait:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContext4waitSb10completionGSqFOS_18CoreDataSaveResultT___T_">saveContext(_:wait:completion:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -104,16 +123,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Attempts to commit unsaved changes to registered objects to the specified context&rsquo;s parent store.
-This method is performed <em>synchronously</em> in a block on the context&rsquo;s queue.
-If the context returns <code>false</code> from <code>hasChanges</code>, this function returns immediately.</p>
+                        <p>Attempts to commit unsaved changes to registered objects to the specified context&rsquo;s parent store. 
+This function is performed in a block on the context&rsquo;s queue. If the context has no changes,
+then this function returns immediately and the completion block is not called.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">saveContextAndWait</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ContextSaveResult</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">saveContext</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">,</span> <span class="nv">wait</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">CoreDataSaveResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -134,56 +153,15 @@ If the context returns <code>false</code> from <code>hasChanges</code>, this fun
                                 </div>
                               </td>
                             </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>A <code>ContextSaveResult</code> instance indicating the result from saving the context.</p>
-
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContextFT7successSb5errorGSqCSo7NSError__T__T_"></a>
-                    <a name="//apple_ref/swift/Function/saveContext(_:_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContextFT7successSb5errorGSqCSo7NSError__T__T_">saveContext(_:_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Attempts to commit unsaved changes to registered objects to the specified context&rsquo;s parent store.
-This method is performed <em>asynchronously</em> in a block on the context&rsquo;s queue.
-If the context returns <code>false</code> from <code>hasChanges</code>, this function returns immediately.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="Swift">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">saveContext</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">(</span><span class="kt">ContextSaveResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
                             <tr>
                               <td>
                                 <code>
-                                <em>context</em>
+                                <em>wait</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The managed object context to save.</p>
+                                  <p>If true (the default), saves synchronously. If false, saves asynchronously.</p>
 
                                 </div>
                               </td>
@@ -220,14 +198,15 @@ If the context returns <code>false</code> from <code>hasChanges</code>, this fun
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the entity with the specified name from the managed object model associated with the specified managed object context’s persistent store coordinator.</p>
+                        <p>Returns the entity with the specified name from the managed object model associated with 
+the specified managed object context’s persistent store coordinator.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">entity</span><span class="p">(</span><span class="nv">#name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">#context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSEntityDescription</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">entity</span><span class="p">(</span><span class="n">name</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSEntityDescription</span></code></pre>
 
                         </div>
                       </div>
@@ -275,9 +254,9 @@ If the context returns <code>false</code> from <code>hasChanges</code>, this fun
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:F14JSQCoreDataKit5fetchU__FT7requestGCS_12FetchRequestQ__9inContextCSo22NSManagedObjectContext_GVS_11FetchResultQ__"></a>
+                    <a name="/s:F14JSQCoreDataKit5fetchuRdq_CSo15NSManagedObject_FzT7requestGCS_12FetchRequestq__9inContextCSo22NSManagedObjectContext_GSaq__"></a>
                     <a name="//apple_ref/swift/Function/fetch(request:inContext:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:F14JSQCoreDataKit5fetchU__FT7requestGCS_12FetchRequestQ__9inContextCSo22NSManagedObjectContext_GVS_11FetchResultQ__">fetch(request:inContext:)</a>
+                    <a class="token" href="#/s:F14JSQCoreDataKit5fetchuRdq_CSo15NSManagedObject_FzT7requestGCS_12FetchRequestq__9inContextCSo22NSManagedObjectContext_GSaq__">fetch(request:inContext:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -285,14 +264,15 @@ If the context returns <code>false</code> from <code>hasChanges</code>, this fun
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Executes the fetch request in the given context and returns the result.</p>
+                        <p>Executes the fetch request in the given context and returns the result.
+This function is performed synchronously in a block on the context&rsquo;s queue.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">fetch</span> <span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">#request</span><span class="p">:</span> <span class="kt">FetchRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">inContext</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">FetchResult</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">fetch</span> <span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="o">&gt;</span><span class="p">(</span><span class="n">request</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">FetchRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">inContext</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -331,7 +311,7 @@ If the context returns <code>false</code> from <code>hasChanges</code>, this fun
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>A instance of <code>FetchResult</code> describing the results of executing the request.</p>
+                        <p>An array of objects that meet the criteria specified by the fetch request. This array may be empty.</p>
 
                       </div>
                     </section>
@@ -340,9 +320,9 @@ If the context returns <code>false</code> from <code>hasChanges</code>, this fun
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:F14JSQCoreDataKit13deleteObjectsU__FTGSaQ__9inContextCSo22NSManagedObjectContext_T_"></a>
+                    <a name="/s:F14JSQCoreDataKit13deleteObjectsuRdq_CSo15NSManagedObject_FTGSaq__9inContextCSo22NSManagedObjectContext_T_"></a>
                     <a name="//apple_ref/swift/Function/deleteObjects(_:inContext:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:F14JSQCoreDataKit13deleteObjectsU__FTGSaQ__9inContextCSo22NSManagedObjectContext_T_">deleteObjects(_:inContext:)</a>
+                    <a class="token" href="#/s:F14JSQCoreDataKit13deleteObjectsuRdq_CSo15NSManagedObject_FTGSaq__9inContextCSo22NSManagedObjectContext_T_">deleteObjects(_:inContext:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -351,8 +331,8 @@ If the context returns <code>false</code> from <code>hasChanges</code>, this fun
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Deletes the objects from the specified context.
-When changes are committed, the objects will be removed from their persistent store.
-You must save the context after calling this function to remove objects from the store.</p>
+You must save the context after calling this function to remove objects from their persistent store.
+This function is performed synchronously in a block on the context&rsquo;s queue.</p>
 
                       </div>
                       <div class="declaration">
@@ -404,8 +384,8 @@ You must save the context after calling this function to remove objects from the
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-05-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-10-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.3.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

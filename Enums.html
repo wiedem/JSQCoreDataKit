@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Classes  Reference</title>
+    <title>Enums  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset='utf-8'>
@@ -9,7 +9,7 @@
     <script src="js/jazzy.js" defer></script>
   </head>
   <body>
-    <a title="Classes  Reference"></a>
+    <a title="Enums  Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="index.html">JSQCoreDataKit Docs</a> (100% documented)</p>
@@ -20,7 +20,7 @@
       <p id="breadcrumbs">
         <a href="index.html">JSQCoreDataKit Reference</a>
         <img id="carat" src="img/carat.png" />
-        Classes  Reference
+        Enums  Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -103,8 +103,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Classes</h1>
-            <p>The following classes are available globally.</p>
+            <h1>Enums</h1>
+            <p>The following enums are available globally.</p>
 
           </section>
           <section class="section task-group-section">
@@ -113,9 +113,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C14JSQCoreDataKit13CoreDataStack"></a>
-                    <a name="//apple_ref/swift/Class/CoreDataStack" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C14JSQCoreDataKit13CoreDataStack">CoreDataStack</a>
+                    <a name="/s:O14JSQCoreDataKit9StoreType"></a>
+                    <a name="//apple_ref/swift/Enum/StoreType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O14JSQCoreDataKit9StoreType">StoreType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -123,23 +123,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An instance of <code>CoreDataStack</code> encapsulates the entire Core Data stack.
-It manages the managed object model, the persistent store coordinator, and managed object contexts.</p>
+                        <p>Describes a Core Data persistent store type.</p>
 
-<p>It is composed of a main context and a background context, both of which are connected to the same persistent store coordinator.
-These two contexts operate on the main queue and a private background queue, respectively.</p>
-
-<p>Data between the two contexts is kept in sync.</p>
-
-<p><strong>You cannot create a <code>CoreDataStack</code> instance directly. Instead, use a <code>CoreDataStackFactory</code> for initialization.</strong></p>
-
-                        <a href="Classes/CoreDataStack.html" class="slightly-smaller">See more</a>
+                        <a href="Enums/StoreType.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">CoreDataStack</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">StoreType</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
 
                         </div>
                       </div>
@@ -153,9 +145,9 @@ These two contexts operate on the main queue and a private background queue, res
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C14JSQCoreDataKit12FetchRequest"></a>
-                    <a name="//apple_ref/swift/Class/FetchRequest" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C14JSQCoreDataKit12FetchRequest">FetchRequest</a>
+                    <a name="/s:O14JSQCoreDataKit18CoreDataSaveResult"></a>
+                    <a name="//apple_ref/swift/Enum/CoreDataSaveResult" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O14JSQCoreDataKit18CoreDataSaveResult">CoreDataSaveResult</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -163,17 +155,47 @@ These two contexts operate on the main queue and a private background queue, res
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An instance of <code>FetchRequest</code> describes search criteria used to retrieve data from a persistent store.
-This is a subclass of <code>NSFetchRequest</code> that adds a type parameter specifying the type of managed objects for the fetch request.
-The type parameter acts as a phantom type.</p>
+                        <p>A result object representing the result of saving an <code>NSManagedObjectContext</code>.</p>
 
-                        <a href="Classes/FetchRequest.html" class="slightly-smaller">See more</a>
+                        <a href="Enums/CoreDataSaveResult.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">FetchRequest</span> <span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSFetchRequest</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CoreDataSaveResult</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:O14JSQCoreDataKit19CoreDataStackResult"></a>
+                    <a name="//apple_ref/swift/Enum/CoreDataStackResult" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O14JSQCoreDataKit19CoreDataStackResult">CoreDataStackResult</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A result object representing the result of creating a <code>CoreDataStack</code> via a <code>CoreDataStackFactory</code>.</p>
+
+                        <a href="Enums/CoreDataStackResult.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="Swift">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CoreDataStackResult</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
 
                         </div>
                       </div>

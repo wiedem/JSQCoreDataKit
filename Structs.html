@@ -38,22 +38,41 @@
             </ul>
           </li>
           <li class="nav-group-name">
+          <a href="Global Variables.html">Global Variables</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Global Variables.html#/s:v14JSQCoreDataKit19DefaultStoreOptionsGVSs10DictionaryCSo8NSObjectPSs9AnyObject__">DefaultStoreOptions</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+          <a href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/CoreDataSaveResult.html">CoreDataSaveResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/CoreDataStackResult.html">CoreDataStackResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/StoreType.html">StoreType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
           <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit13deleteObjectsU__FTGSaQ__9inContextCSo22NSManagedObjectContext_T_">deleteObjects(_:inContext:)</a>
+                <a href="Functions.html#/s:F14JSQCoreDataKit13deleteObjectsuRdq_CSo15NSManagedObject_FTGSaq__9inContextCSo22NSManagedObjectContext_T_">deleteObjects(_:inContext:)</a>
               </li>
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F14JSQCoreDataKit6entityFT4nameSS7contextCSo22NSManagedObjectContext_CSo19NSEntityDescription">entity(name:context:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit5fetchU__FT7requestGCS_12FetchRequestQ__9inContextCSo22NSManagedObjectContext_GVS_11FetchResultQ__">fetch(request:inContext:)</a>
+                <a href="Functions.html#/s:F14JSQCoreDataKit5fetchuRdq_CSo15NSManagedObject_FzT7requestGCS_12FetchRequestq__9inContextCSo22NSManagedObjectContext_GSaq__">fetch(request:inContext:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContextFT7successSb5errorGSqCSo7NSError__T__T_">saveContext(_:_:)</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit18saveContextAndWaitFCSo22NSManagedObjectContextT7successSb5errorGSqCSo7NSError__">saveContextAndWait(_:)</a>
+                <a href="Functions.html#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContext4waitSb10completionGSqFOS_18CoreDataSaveResultT___T_">saveContext(_:wait:completion:)</a>
               </li>
             </ul>
           </li>
@@ -64,7 +83,7 @@
                 <a href="Structs/CoreDataModel.html">CoreDataModel</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/FetchResult.html">FetchResult</a>
+                <a href="Structs/CoreDataStackFactory.html">CoreDataStackFactory</a>
               </li>
             </ul>
           </li>
@@ -72,10 +91,10 @@
           <a href="Typealiases.html">Typealiases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Typealiases.html#/s:14JSQCoreDataKit25ChildManagedObjectContext">ChildManagedObjectContext</a>
+                <a href="Typealiases.html#/s:14JSQCoreDataKit12ChildContext">ChildContext</a>
               </li>
               <li class="nav-group-task">
-                <a href="Typealiases.html#/s:14JSQCoreDataKit17ContextSaveResult">ContextSaveResult</a>
+                <a href="Typealiases.html#/s:14JSQCoreDataKit22PersistentStoreOptions">PersistentStoreOptions</a>
               </li>
             </ul>
           </li>
@@ -94,9 +113,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:V14JSQCoreDataKit13CoreDataModel"></a>
-                    <a name="//apple_ref/swift/Struct/CoreDataModel" class="dashAnchor"></a>
-                    <a class="token" href="#/s:V14JSQCoreDataKit13CoreDataModel">CoreDataModel</a>
+                    <a name="/s:V14JSQCoreDataKit20CoreDataStackFactory"></a>
+                    <a name="//apple_ref/swift/Struct/CoreDataStackFactory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V14JSQCoreDataKit20CoreDataStackFactory">CoreDataStackFactory</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -104,16 +123,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>An instance of <code>CoreDataModel</code> represents a Core Data model.
-It provides the model and store URLs as well as functions for interacting with the store.</p>
+                        <p>An instance of <code>CoreDataStackFactory</code> is responsible for creating instances of <code>CoreDataStack</code>.</p>
 
-                        <a href="Structs/CoreDataModel.html" class="slightly-smaller">See more</a>
+<p>Because the adding of the persistent store to the persistent store coordinator during initialization
+of a <code>CoreDataStack</code> can take an unknown amount of time, you should not perform this operation on the main queue.</p>
+
+<p>See this <a href="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Conceptual/CoreData/IntegratingCoreData.html#//apple_ref/doc/uid/TP40001075-CH9-SW1">guide</a> for more details.</p>
+
+                        <a href="Structs/CoreDataStackFactory.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CoreDataModel</span><span class="p">:</span> <span class="kt">Printable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CoreDataStackFactory</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
 
                         </div>
                       </div>
@@ -127,9 +150,9 @@ It provides the model and store URLs as well as functions for interacting with t
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:V14JSQCoreDataKit11FetchResult"></a>
-                    <a name="//apple_ref/swift/Struct/FetchResult" class="dashAnchor"></a>
-                    <a class="token" href="#/s:V14JSQCoreDataKit11FetchResult">FetchResult</a>
+                    <a name="/s:V14JSQCoreDataKit13CoreDataModel"></a>
+                    <a name="//apple_ref/swift/Struct/CoreDataModel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:V14JSQCoreDataKit13CoreDataModel">CoreDataModel</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -137,16 +160,16 @@ It provides the model and store URLs as well as functions for interacting with t
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A <code>FetchResult</code> represents the result of executing a fetch request.
-It has one type parameter that specifies the type of managed objects that were fetched.</p>
+                        <p>An instance of <code>CoreDataModel</code> represents a Core Data model.
+It provides the model and store URLs as well as methods for interacting with the store.</p>
 
-                        <a href="Structs/FetchResult.html" class="slightly-smaller">See more</a>
+                        <a href="Structs/CoreDataModel.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="Swift">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">FetchResult</span> <span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">CoreDataModel</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
 
                         </div>
                       </div>
@@ -158,8 +181,8 @@ It has one type parameter that specifies the type of managed objects that were f
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-05-30)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.2.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-10-11)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.3.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
