@@ -6,4 +6,9 @@
 
 git submodule update --remote
 
-jazzy -o ./ --source-directory JSQCoreDataKit/JSQCoreDataKit/ --readme JSQCoreDataKit/README.md -a 'Jesse Squires' -u 'https://twitter.com/jesse_squires' -m 'JSQCoreDataKit' -g 'https://github.com/jessesquires/JSQCoreDataKit'
+jazzy --swift-version 2.1 -o ./ --source-directory JSQCoreDataKit/JSQCoreDataKit/ \
+      --readme JSQCoreDataKit/README.md \
+      -a 'Jesse Squires' \
+      -u 'https://twitter.com/jesse_squires' \
+      -m 'JSQCoreDataKit' \
+      -g 'https://github.com/jessesquires/JSQCoreDataKit'
