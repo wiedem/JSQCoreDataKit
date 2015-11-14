@@ -27,7 +27,7 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-          <a href="Classes.html">Classes</a>
+            <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Classes/CoreDataStack.html">CoreDataStack</a>
@@ -38,7 +38,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="Global Variables.html">Global Variables</a>
+            <a href="Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Global Variables.html#/s:v14JSQCoreDataKit19DefaultStoreOptionsGVSs10DictionaryCSo8NSObjectPSs9AnyObject__">DefaultStoreOptions</a>
@@ -46,7 +46,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="Enums.html">Enums</a>
+            <a href="Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/CoreDataSaveResult.html">CoreDataSaveResult</a>
@@ -60,7 +60,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="Functions.html">Functions</a>
+            <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Functions.html#/s:F14JSQCoreDataKit13deleteObjectsuRdq_CSo15NSManagedObject_FTGSaq__9inContextCSo22NSManagedObjectContext_T_">deleteObjects(_:inContext:)</a>
@@ -77,7 +77,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="Structs.html">Structs</a>
+            <a href="Structs.html">Structs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/CoreDataModel.html">CoreDataModel</a>
@@ -88,7 +88,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="Typealiases.html">Typealiases</a>
+            <a href="Typealiases.html">Typealiases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Typealiases.html#/s:14JSQCoreDataKit12ChildContext">ChildContext</a>
@@ -130,7 +130,7 @@ then this function returns immediately and the completion block is not called.</
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-                        <div class="Swift">
+                        <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">saveContext</span><span class="p">(</span><span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">,</span> <span class="nv">wait</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">CoreDataSaveResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
 
@@ -204,7 +204,7 @@ the specified managed object context’s persistent store coordinator.</p>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-                        <div class="Swift">
+                        <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">entity</span><span class="p">(</span><span class="n">name</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">NSEntityDescription</span></code></pre>
 
@@ -265,12 +265,18 @@ the specified managed object context’s persistent store coordinator.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Executes the fetch request in the given context and returns the result.
-This function is performed synchronously in a block on the context&rsquo;s queue.</p>
+- note: This function is performed synchronously in a block on the context&rsquo;s queue.</p>
+
+<div class="aside aside-throws">
+          <p class="aside-title">Throws</p>
+          <p>If the fetch fails or errors, then this function throws an <code>NSError</code>.</p>
+
+        </div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-                        <div class="Swift">
+                        <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">fetch</span> <span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="o">&gt;</span><span class="p">(</span><span class="n">request</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">FetchRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">inContext</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span></code></pre>
 
@@ -332,12 +338,12 @@ This function is performed synchronously in a block on the context&rsquo;s queue
                       <div class="abstract">
                         <p>Deletes the objects from the specified context.
 You must save the context after calling this function to remove objects from their persistent store.
-This function is performed synchronously in a block on the context&rsquo;s queue.</p>
+- note: This function is performed synchronously in a block on the context&rsquo;s queue.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-                        <div class="Swift">
+                        <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">deleteObjects</span> <span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">objects</span><span class="p">:</span> <span class="p">[</span><span class="kt">T</span><span class="p">],</span> <span class="n">inContext</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span></code></pre>
 
@@ -384,8 +390,8 @@ This function is performed synchronously in a block on the context&rsquo;s queue
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-11-02)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.3.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

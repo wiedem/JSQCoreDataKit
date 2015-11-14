@@ -28,7 +28,7 @@
       <nav class="sidebar">
         <ul class="nav-groups">
           <li class="nav-group-name">
-          <a href="../Classes.html">Classes</a>
+            <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Classes/CoreDataStack.html">CoreDataStack</a>
@@ -39,7 +39,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="../Global Variables.html">Global Variables</a>
+            <a href="../Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Global Variables.html#/s:v14JSQCoreDataKit19DefaultStoreOptionsGVSs10DictionaryCSo8NSObjectPSs9AnyObject__">DefaultStoreOptions</a>
@@ -47,7 +47,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="../Enums.html">Enums</a>
+            <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/CoreDataSaveResult.html">CoreDataSaveResult</a>
@@ -61,7 +61,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="../Functions.html">Functions</a>
+            <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Functions.html#/s:F14JSQCoreDataKit13deleteObjectsuRdq_CSo15NSManagedObject_FTGSaq__9inContextCSo22NSManagedObjectContext_T_">deleteObjects(_:inContext:)</a>
@@ -78,7 +78,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="../Structs.html">Structs</a>
+            <a href="../Structs.html">Structs</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/CoreDataModel.html">CoreDataModel</a>
@@ -89,7 +89,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-          <a href="../Typealiases.html">Typealiases</a>
+            <a href="../Typealiases.html">Typealiases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:14JSQCoreDataKit12ChildContext">ChildContext</a>
@@ -106,7 +106,7 @@
           <section class="section">
             <h1>CoreDataStack</h1>
               <div class="declaration">
-                <div class="Swift">
+                <div class="language">
                   <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">CoreDataStack</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
 
                 </div>
@@ -122,18 +122,22 @@ The main context is a child of the background context.</p>
 <p>Data between these two primary contexts and child contexts is kept in sync.
 Changes to a context are propagated to its parent context and eventually the persistent store when saving.</p>
 
-<p><strong>You cannot create a <code>CoreDataStack</code> instance directly. Instead, use a <code>CoreDataStackFactory</code> for initialization.</strong></p>
+<div class="aside aside-warning">
+          <p class="aside-title">Warning</p>
+          <strong>You cannot create a <code>CoreDataStack</code> instance directly. Instead, use a <code><a href="../Structs/CoreDataStackFactory.html">CoreDataStackFactory</a></code> for initialization.</strong>
+
+        </div>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
-                <div class="task-name-container">
-                  <a name="/Properties"></a>
-                  <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
-                  <a href="#/Properties">
-                    <h3 class="section-name">Properties</h3>
-                  </a>
-                </div>
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -153,7 +157,7 @@ Changes to a context are propagated to its parent context and eventually the per
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-                        <div class="Swift">
+                        <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">model</span><span class="p">:</span> <span class="kt">CoreDataModel</span></code></pre>
 
@@ -181,7 +185,7 @@ This context is a child context of <code>backgroundContext</code>.</p>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-                        <div class="Swift">
+                        <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">mainContext</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span></code></pre>
 
@@ -209,7 +213,7 @@ This context is the root level context that is connected to the <code>storeCoord
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-                        <div class="Swift">
+                        <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">backgroundContext</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span></code></pre>
 
@@ -236,7 +240,7 @@ This context is the root level context that is connected to the <code>storeCoord
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-                        <div class="Swift">
+                        <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">storeCoordinator</span><span class="p">:</span> <span class="kt">NSPersistentStoreCoordinator</span></code></pre>
 
@@ -248,13 +252,13 @@ This context is the root level context that is connected to the <code>storeCoord
               </ul>
             </div>
             <div class="task-group">
-                <div class="task-name-container">
-                  <a name="/Child%20contexts"></a>
-                  <a name="//apple_ref/swift/Section/Child contexts" class="dashAnchor"></a>
-                  <a href="#/Child%20contexts">
-                    <h3 class="section-name">Child contexts</h3>
-                  </a>
-                </div>
+              <div class="task-name-container">
+                <a name="/Child%20contexts"></a>
+                <a name="//apple_ref/swift/Section/Child contexts" class="dashAnchor"></a>
+                <a href="#/Child%20contexts">
+                  <h3 class="section-name">Child contexts</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
@@ -276,7 +280,7 @@ and finally the persistent store.</p>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
-                        <div class="Swift">
+                        <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">childContext</span><span class="p">(</span>
         <span class="n">concurrencyType</span> <span class="nv">concurrencyType</span><span class="p">:</span> <span class="kt">NSManagedObjectContextConcurrencyType</span> <span class="o">=</span> <span class="o">.</span><span class="kt">PrivateQueueConcurrencyType</span><span class="p">,</span>
@@ -330,8 +334,8 @@ and finally the persistent store.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-11-02)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.3.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-11-14)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
