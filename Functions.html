@@ -72,6 +72,9 @@
                 <a href="Functions.html#/s:F14JSQCoreDataKit5fetchuRdq_CSo15NSManagedObject_FzT7requestGCS_12FetchRequestq__9inContextCSo22NSManagedObjectContext_GSaq__">fetch(request:inContext:)</a>
               </li>
               <li class="nav-group-task">
+                <a href="Functions.html#/s:F14JSQCoreDataKit10resetStackFTCS_13CoreDataStack5queuePSo17OS_dispatch_queue_10completionFT6resultOS_19CoreDataStackResult_T__T_">resetStack(_:queue:completion:)</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Functions.html#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContext4waitSb10completionGSqFOS_18CoreDataSaveResultT___T_">saveContext(_:wait:completion:)</a>
               </li>
             </ul>
@@ -95,6 +98,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Typealiases.html#/s:14JSQCoreDataKit22PersistentStoreOptions">PersistentStoreOptions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:14JSQCoreDataKit18StackResultClosure">StackResultClosure</a>
               </li>
             </ul>
           </li>
@@ -123,7 +129,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Attempts to commit unsaved changes to registered objects in the context. 
+                        <p>Attempts to commit unsaved changes to registered objects in the context.
 This function is performed in a block on the context&rsquo;s queue. If the context has no changes,
 then this function returns immediately and the completion block is not called.</p>
 
@@ -198,7 +204,7 @@ then this function returns immediately and the completion block is not called.</
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the entity with the specified name from the managed object model associated with 
+                        <p>Returns the entity with the specified name from the managed object model associated with
 the specified managed object context’s persistent store coordinator.</p>
 
                       </div>
@@ -264,10 +270,13 @@ the specified managed object context’s persistent store coordinator.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Executes the fetch request in the given context and returns the result.
-- note: This function is performed synchronously in a block on the context&rsquo;s queue.</p>
+                        <p>Executes the fetch request in the given context and returns the result.</p>
 
-<div class="aside aside-throws">
+<div class="aside aside-note">
+          <p class="aside-title">Note</p>
+          <p>This function is performed synchronously in a block on the context&rsquo;s queue.</p>
+
+        </div><div class="aside aside-throws">
           <p class="aside-title">Throws</p>
           <p>If the fetch fails or errors, then this function throws an <code>NSError</code>.</p>
 
@@ -337,8 +346,13 @@ the specified managed object context’s persistent store coordinator.</p>
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Deletes the objects from the specified context.
-You must save the context after calling this function to remove objects from their persistent store.
-- note: This function is performed synchronously in a block on the context&rsquo;s queue.</p>
+ You must save the context after calling this function to remove objects from their persistent store.</p>
+
+<div class="aside aside-note">
+          <p class="aside-title">Note</p>
+          <p>This function is performed synchronously in a block on the context&rsquo;s queue.</p>
+
+        </div>
 
                       </div>
                       <div class="declaration">
@@ -385,12 +399,96 @@ You must save the context after calling this function to remove objects from the
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:F14JSQCoreDataKit10resetStackFTCS_13CoreDataStack5queuePSo17OS_dispatch_queue_10completionFT6resultOS_19CoreDataStackResult_T__T_"></a>
+                    <a name="//apple_ref/swift/Function/resetStack(_:queue:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:F14JSQCoreDataKit10resetStackFTCS_13CoreDataStack5queuePSo17OS_dispatch_queue_10completionFT6resultOS_19CoreDataStackResult_T__T_">resetStack(_:queue:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resets the managed object contexts in the stack on their respective threads.
+ Then, if the coordinator is connected to a persistent store, the store will be deleted and recreated on a background thread.
+ The completion closure is executed on the main thread.</p>
+
+<div class="aside aside-note">
+          <p class="aside-title">Note</p>
+          <p>Removing and re-adding the persistent store is performed on a background queue.
+For binary and SQLite stores, this will also remove the store from disk.</p>
+
+        </div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">resetStack</span><span class="p">(</span><span class="nv">stack</span><span class="p">:</span> <span class="kt">CoreDataStack</span><span class="p">,</span>
+    <span class="nv">queue</span><span class="p">:</span> <span class="n">dispatch_queue_t</span> <span class="o">=</span> <span class="nf">dispatch_get_global_queue</span><span class="p">(</span><span class="kt">DISPATCH_QUEUE_PRIORITY_HIGH</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="nv">completion</span><span class="p">:</span> <span class="kt">StackResultClosure</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>stack</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The stack to reset.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>queue</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A background queue on which to reset the stack. The default is a high priority background queue.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure to be called once resetting is complete.</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-12-02)</p>
+          <p>&copy; 2015 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2015-12-28)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.4.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
