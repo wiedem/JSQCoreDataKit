@@ -221,11 +221,15 @@
     <span class="nf">print</span><span class="p">(</span><span class="s">"Error: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre>
-<a href='#checking_migrations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='checking_migrations'>Checking migrations</h4>
+<a href='#performing_migrations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='performing_migrations'>Performing migrations</h4>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">bundle</span> <span class="o">=</span> <span class="kt">NSBundle</span><span class="p">(</span><span class="nv">identifier</span><span class="p">:</span> <span class="s">"com.MyApp.MyModelFramework"</span><span class="p">)</span><span class="o">!</span>
 <span class="k">let</span> <span class="nv">model</span> <span class="o">=</span> <span class="kt">CoreDataModel</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"MyModel"</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="n">bundle</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">needsMigration</span> <span class="p">{</span>
-    <span class="c1">// do migration</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="k">try</span> <span class="nf">migrate</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="s">"Failed to migrate model: </span><span class="se">\(</span><span class="n">error</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </code></pre>
 <a href='#using_child_contexts' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='using_child_contexts'>Using child contexts</h4>
