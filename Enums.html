@@ -42,7 +42,7 @@
             <a href="Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Global Variables.html#/s:v14JSQCoreDataKit19DefaultStoreOptionsGVs10DictionaryCSo8NSObjectPs9AnyObject__">DefaultStoreOptions</a>
+                <a href="Global Variables.html#/s:v14JSQCoreDataKit19defaultStoreOptionsGVs10DictionaryCSo8NSObjectPs9AnyObject__">defaultStoreOptions</a>
               </li>
             </ul>
           </li>
@@ -50,10 +50,16 @@
             <a href="Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Enums/CoreDataSaveResult.html">CoreDataSaveResult</a>
+                <a href="Enums/MigrationError.html">MigrationError</a>
               </li>
               <li class="nav-group-task">
-                <a href="Enums/CoreDataStackResult.html">CoreDataStackResult</a>
+                <a href="Enums/ModelFileExtension.html">ModelFileExtension</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/SaveResult.html">SaveResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/StackResult.html">StackResult</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/StoreType.html">StoreType</a>
@@ -73,10 +79,13 @@
                 <a href="Functions.html#/s:F14JSQCoreDataKit5fetchuRxCSo15NSManagedObjectrFzT7requestGCS_12FetchRequestx_9inContextCSo22NSManagedObjectContext_GSax_">fetch(request:inContext:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit10resetStackFTCS_13CoreDataStack5queuePSo17OS_dispatch_queue_10completionFT6resultOS_19CoreDataStackResult_T__T_">resetStack(_:queue:completion:)</a>
+                <a href="Functions.html#/s:F14JSQCoreDataKit7migrateFzVS_13CoreDataModelT_">migrate(_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContext4waitSb10completionGSqFOS_18CoreDataSaveResultT___T_">saveContext(_:wait:completion:)</a>
+                <a href="Functions.html#/s:F14JSQCoreDataKit10resetStackFTCS_13CoreDataStack5queuePSo17OS_dispatch_queue_10completionFT6resultOS_11StackResult_T__T_">resetStack(_:queue:completion:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Functions.html#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContext4waitSb10completionGSqFOS_10SaveResultT___T_">saveContext(_:wait:completion:)</a>
               </li>
             </ul>
           </li>
@@ -99,9 +108,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="Typealiases.html#/s:14JSQCoreDataKit22PersistentStoreOptions">PersistentStoreOptions</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Typealiases.html#/s:14JSQCoreDataKit18StackResultClosure">StackResultClosure</a>
               </li>
             </ul>
           </li>
@@ -152,9 +158,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:O14JSQCoreDataKit18CoreDataSaveResult"></a>
-                    <a name="//apple_ref/swift/Enum/CoreDataSaveResult" class="dashAnchor"></a>
-                    <a class="token" href="#/s:O14JSQCoreDataKit18CoreDataSaveResult">CoreDataSaveResult</a>
+                    <a name="/s:O14JSQCoreDataKit14MigrationError"></a>
+                    <a name="//apple_ref/swift/Enum/MigrationError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O14JSQCoreDataKit14MigrationError">MigrationError</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -162,15 +168,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A result object representing the result of saving an <code>NSManagedObjectContext</code>.</p>
+                        <p>An error type that specifies possible errors that are thrown by calling <code>func migrate(model: CoreDataModel) throws</code></p>
 
-                        <a href="Enums/CoreDataSaveResult.html" class="slightly-smaller">See more</a>
+                        <a href="Enums/MigrationError.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CoreDataSaveResult</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">MigrationError</span><span class="p">:</span> <span class="kt">ErrorType</span></code></pre>
 
                         </div>
                       </div>
@@ -184,9 +190,75 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:O14JSQCoreDataKit19CoreDataStackResult"></a>
-                    <a name="//apple_ref/swift/Enum/CoreDataStackResult" class="dashAnchor"></a>
-                    <a class="token" href="#/s:O14JSQCoreDataKit19CoreDataStackResult">CoreDataStackResult</a>
+                    <a name="/s:O14JSQCoreDataKit10SaveResult"></a>
+                    <a name="//apple_ref/swift/Enum/SaveResult" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O14JSQCoreDataKit10SaveResult">SaveResult</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A result object representing the result of saving an <code>NSManagedObjectContext</code>.</p>
+
+                        <a href="Enums/SaveResult.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SaveResult</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:O14JSQCoreDataKit18ModelFileExtension"></a>
+                    <a name="//apple_ref/swift/Enum/ModelFileExtension" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O14JSQCoreDataKit18ModelFileExtension">ModelFileExtension</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Describes a Core Data model file exention type based on the
+<a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreDataVersioning/Articles/vmModelFormat.html">Model File Format and Versions</a>
+documentation.</p>
+
+                        <a href="Enums/ModelFileExtension.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ModelFileExtension</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:O14JSQCoreDataKit11StackResult"></a>
+                    <a name="//apple_ref/swift/Enum/StackResult" class="dashAnchor"></a>
+                    <a class="token" href="#/s:O14JSQCoreDataKit11StackResult">StackResult</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -196,13 +268,13 @@
                       <div class="abstract">
                         <p>A result object representing the result of creating a <code><a href="Classes/CoreDataStack.html">CoreDataStack</a></code> via a <code><a href="Structs/CoreDataStackFactory.html">CoreDataStackFactory</a></code>.</p>
 
-                        <a href="Enums/CoreDataStackResult.html" class="slightly-smaller">See more</a>
+                        <a href="Enums/StackResult.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">CoreDataStackResult</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">StackResult</span><span class="p">:</span> <span class="kt">CustomStringConvertible</span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
 
                         </div>
                       </div>
@@ -214,7 +286,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2016-04-02)</p>
+          <p>&copy; 2016 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2016-04-03)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

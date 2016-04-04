@@ -43,7 +43,7 @@
             <a href="../Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Global Variables.html#/s:v14JSQCoreDataKit19DefaultStoreOptionsGVs10DictionaryCSo8NSObjectPs9AnyObject__">DefaultStoreOptions</a>
+                <a href="../Global Variables.html#/s:v14JSQCoreDataKit19defaultStoreOptionsGVs10DictionaryCSo8NSObjectPs9AnyObject__">defaultStoreOptions</a>
               </li>
             </ul>
           </li>
@@ -51,10 +51,16 @@
             <a href="../Enums.html">Enums</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Enums/CoreDataSaveResult.html">CoreDataSaveResult</a>
+                <a href="../Enums/MigrationError.html">MigrationError</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/CoreDataStackResult.html">CoreDataStackResult</a>
+                <a href="../Enums/ModelFileExtension.html">ModelFileExtension</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/SaveResult.html">SaveResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/StackResult.html">StackResult</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/StoreType.html">StoreType</a>
@@ -74,10 +80,13 @@
                 <a href="../Functions.html#/s:F14JSQCoreDataKit5fetchuRxCSo15NSManagedObjectrFzT7requestGCS_12FetchRequestx_9inContextCSo22NSManagedObjectContext_GSax_">fetch(request:inContext:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:F14JSQCoreDataKit10resetStackFTCS_13CoreDataStack5queuePSo17OS_dispatch_queue_10completionFT6resultOS_19CoreDataStackResult_T__T_">resetStack(_:queue:completion:)</a>
+                <a href="../Functions.html#/s:F14JSQCoreDataKit7migrateFzVS_13CoreDataModelT_">migrate(_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContext4waitSb10completionGSqFOS_18CoreDataSaveResultT___T_">saveContext(_:wait:completion:)</a>
+                <a href="../Functions.html#/s:F14JSQCoreDataKit10resetStackFTCS_13CoreDataStack5queuePSo17OS_dispatch_queue_10completionFT6resultOS_11StackResult_T__T_">resetStack(_:queue:completion:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:F14JSQCoreDataKit11saveContextFTCSo22NSManagedObjectContext4waitSb10completionGSqFOS_10SaveResultT___T_">saveContext(_:wait:completion:)</a>
               </li>
             </ul>
           </li>
@@ -100,9 +109,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Typealiases.html#/s:14JSQCoreDataKit22PersistentStoreOptions">PersistentStoreOptions</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Typealiases.html#/s:14JSQCoreDataKit18StackResultClosure">StackResultClosure</a>
               </li>
             </ul>
           </li>
@@ -127,9 +133,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO14JSQCoreDataKit9StoreType6SQLiteFMS0_FCSo5NSURLS0_"></a>
-                    <a name="//apple_ref/swift/Element/SQLite" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO14JSQCoreDataKit9StoreType6SQLiteFMS0_FCSo5NSURLS0_">SQLite</a>
+                    <a name="/s:FO14JSQCoreDataKit9StoreType6sqliteFMS0_FCSo5NSURLS0_"></a>
+                    <a name="//apple_ref/swift/Element/sqlite" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO14JSQCoreDataKit9StoreType6sqliteFMS0_FCSo5NSURLS0_">sqlite</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -144,7 +150,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">SQLite</span> <span class="p">(</span><span class="kt">NSURL</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">sqlite</span> <span class="p">(</span><span class="kt">NSURL</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -158,9 +164,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO14JSQCoreDataKit9StoreType6BinaryFMS0_FCSo5NSURLS0_"></a>
-                    <a name="//apple_ref/swift/Element/Binary" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO14JSQCoreDataKit9StoreType6BinaryFMS0_FCSo5NSURLS0_">Binary</a>
+                    <a name="/s:FO14JSQCoreDataKit9StoreType6binaryFMS0_FCSo5NSURLS0_"></a>
+                    <a name="//apple_ref/swift/Element/binary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO14JSQCoreDataKit9StoreType6binaryFMS0_FCSo5NSURLS0_">binary</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -175,7 +181,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">Binary</span> <span class="p">(</span><span class="kt">NSURL</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">binary</span> <span class="p">(</span><span class="kt">NSURL</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -189,9 +195,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FO14JSQCoreDataKit9StoreType8InMemoryFMS0_S0_"></a>
-                    <a name="//apple_ref/swift/Element/InMemory" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FO14JSQCoreDataKit9StoreType8InMemoryFMS0_S0_">InMemory</a>
+                    <a name="/s:FO14JSQCoreDataKit9StoreType8inMemoryFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/inMemory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO14JSQCoreDataKit9StoreType8inMemoryFMS0_S0_">inMemory</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -206,7 +212,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="k">case</span> <span class="kt">InMemory</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">inMemory</span></code></pre>
 
                         </div>
                       </div>
@@ -303,7 +309,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2016 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2016-04-02)</p>
+          <p>&copy; 2016 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2016-04-03)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
