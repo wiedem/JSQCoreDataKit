@@ -42,18 +42,20 @@ class CompanyViewController: UITableViewController, NSFetchedResultsControllerDe
         let model = CoreDataModel(name: modelName, bundle: modelBundle)
         let factory = CoreDataStackFactory(model: model)
 
-        factory.createStack { (result: StackResult) -> Void in
+        self.stack = factory.createStack { (result) in
             switch result {
-            case .success(let s):
-                self.stack = s
-                self.setupFRC()
+            case .success(_):
+                self.fetchData()
+                break
 
             case .failure(let err):
-                assertionFailure("Error creating stack: \(err)")
+                assertionFailure("Error loading persistent store: \(err)")
             }
 
             self.hideSpinner()
         }
+
+        self.setupFRC()
     }
 
 
@@ -87,8 +89,6 @@ class CompanyViewController: UITableViewController, NSFetchedResultsControllerDe
                                               cacheName: nil)
 
         self.frc?.delegate = self
-
-        fetchData()
     }
 
     func fetchData() {
